@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  demo-service:
+    image: openjdk:11-jdk-slim
+    working_dir: /work
+    entrypoint: ""
+    command: ./gradlew bootRun
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/work
+      - ./.gradle-cache:/root/.gradle
