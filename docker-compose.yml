@@ -13,3 +13,15 @@ services:
     volumes:
       - .:/work
       - ./.gradle-cache:/root/.gradle
+  localstack:
+    container_name: "demo-service-localstack_main"
+    image: localstack/localstack
+    network_mode: bridge
+    ports:
+      - "0.0.0.0:4566:4566"
+    environment:
+      - SERVICES=dynamodb, sqs
+      - DEFAULT_REGION=ap-southeast-2
+      - DEBUG=1
+    volumes:
+      - ./auto/local-stack:/docker-entrypoint-initaws.d
