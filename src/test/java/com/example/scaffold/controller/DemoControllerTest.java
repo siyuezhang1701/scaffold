@@ -2,11 +2,12 @@ package com.example.scaffold.controller;
 
 import com.example.scaffold.service.DemoService;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-public class DemoControllerTest extends BaseIntegrationTest{
+public class DemoControllerTest extends BaseControllerIntegrationTest {
 
     @MockBean
     private DemoService demoService;
